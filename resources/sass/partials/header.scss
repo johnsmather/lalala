@@ -1,0 +1,26 @@
+.links {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    width: 100%;
+    max-width: $container;
+    background: $extra;
+    box-shadow: 0 0 10px rgba($extra, .6);
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    z-index: 123456432134;
+    &-item {
+        i {
+            font-size: 30px;
+            color: #111111;
+            transition: $dt;
+            &:hover {
+               transform: scale(1.2);
+            }
+        }
+    }
+}

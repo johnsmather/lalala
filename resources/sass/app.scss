@@ -1,0 +1,85 @@
+//Полный сброс стилей
+@import "reset.scss";
+//Шрифты
+@import "fonts.scss";
+//Переменные
+@import "vars.scss";
+//Миксины
+@import "mixins.scss";
+//Модальные окна
+@import "popups.scss";
+
+//Стандартное
+html {
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, span, a, li, div, table, * {
+  font-family: "Monserrat", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: $main;
+  color: $text;
+}
+::-webkit-scrollbar {
+}
+
+
+// Input arrows
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: $container !important;
+  margin: 0 auto;
+  @include breakpoint($bp1) {
+    padding: 0 10px;
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper-single {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+}
+
+.hidden {
+  display: none !important;
+}
+
+//Подключениее блоков
+@import "partials/main.scss";
+@import "partials/header.scss";
+@import "partials/footer.scss";
+@import "partials/admin.scss";

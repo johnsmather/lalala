@@ -1,0 +1,70 @@
+@mixin breakpoint($br) {
+  @media (max-width: $br)  {
+    @content
+  }
+};
+
+@mixin font($size, $td, $color, $ta) {
+  font-size: $size;
+  text-decoration: $td;
+  color: $color;
+  text-align: $ta;
+};
+
+%btn-effect {
+  @include font(2.2rem, none, $white, left);
+  position: relative;
+  transition: $dt;
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 3px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) ;
+    background-color: $extra;
+    transition: $dt;
+  }
+  &:hover {
+    color: $extra
+  }
+  &:hover:before {
+    height: 3px;
+    width: 100%;
+  }
+};
+
+%ma {
+  margin-left: auto;
+  margin-right: auto;
+};
+
+@mixin triangle($direction, $size: 6px, $color: #222){
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0; width: 0;
+  @if ($direction == 'up'){
+    border-bottom: $size solid $color;
+    border-left: 1/2*$size solid transparent;
+    border-right: 1/2*$size solid transparent;
+  }
+  @else if ($direction == 'down'){
+    border-top: $size solid $color;
+    border-left: 1/2*$size solid transparent;
+    border-right: 1/2*$size solid transparent;
+  }
+  @else if ($direction == 'left'){
+    border-top: 1/2*$size solid transparent;
+    border-bottom: 1/2*$size solid transparent;
+    border-right: $size solid $color;
+  }
+  @else if ($direction == 'right'){
+    border-top: 1/2*$size solid transparent;
+    border-bottom: 1/2*$size solid transparent;
+    border-left: $size solid $color;
+  }
+}

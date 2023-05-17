@@ -1,0 +1,1376 @@
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    &__container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    // .banner__container
+    &__con {
+        width: 100%;
+        height: 100vh;
+        padding-bottom: 100px;
+        display: flex;
+        align-items: center;
+        @include breakpoint($bp2) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    // .banner__title
+    &__title {
+        margin-top: -130px;
+        width: 50%;
+        font-size: 50px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        line-height: 60px;
+        span {
+            color: $red;
+        }
+        @include breakpoint($bp2) {
+            width: 100%;
+            text-align: center;
+            font-size: 50px;
+            line-height: 65px;
+            letter-spacing: 3px;
+        }
+        @include breakpoint($bp3) {
+            font-size: 35px;
+            line-height: 50px;
+            margin-top: -75px;
+        }
+        @include breakpoint($bp4) {
+            font-size: 25px;
+            line-height: 40px;
+            letter-spacing: 2px;
+            margin-top: -50px;
+        }
+    }
+    // .banner__subtitle
+    &__subtitle {
+        margin-top: 130px;
+        text-align: right;
+        width: 50%;
+        color: $text;
+        letter-spacing: 1px;
+        font-size: 20px;
+        line-height: 25px;
+        font-weight: 700;
+        text-shadow: 0 0 10px white;
+        @include breakpoint($bp2) {
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 18px;
+            margin-top: 75px;
+        }
+        @include breakpoint($bp3) {
+            font-size: 14px;
+            line-height: 14px;
+            margin-top: 50px;
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #111111;
+    padding-bottom: 30px;
+}
+
+
+.title {
+    font-size: 45px;
+    font-weight: 900;
+    display: table;
+    color: #fff;
+    margin: 50px auto;
+    span {
+        background: linear-gradient(135deg, $extra 50%, rgba($extra, .5));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    @include breakpoint(600px) {
+        margin: 10px;
+        font-size: 30px;
+    }
+}
+
+.list {
+    display: flex;
+    gap: 10px 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.litem {
+    position: relative;
+    line-height: 30px;
+    margin-top: 35px;
+    width: 35%;
+    height: 150px;
+    color: #fff;
+    text-decoration: none;
+    div {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        background-color: #090909;
+        box-shadow: 0 0 10px #000;
+        transition: $dt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    h2 {
+        font-size: 16px;
+        color: rgba(#fff, .8);
+        font-weight: 700;
+        @include breakpoint(800px) {
+            font-size: 13px;
+        }
+    }
+    &:before {
+        content: "";
+        z-index: -1;
+        width: 50%;
+        height: 50px;
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        background: linear-gradient(to bottom right, $extra, $extra);
+    }
+    &:after {
+        content: "";
+        z-index: -1;
+        width: 90%;
+        height: 90%;
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        background: linear-gradient(to bottom right, rgba($extra, .3), rgba($extra, .3));
+        opacity: 0;
+        transition: transform $dt;
+    }
+    &:hover {
+        div {
+            transform: translate(0, -10px);
+            background: linear-gradient(to bottom right, $extra, $extra);
+        }
+    }
+    &:hover:before {
+        background: transparent;
+    }
+    &:hover:after {
+        opacity: 1;
+        transform: translate(0, -10px);
+    }
+    &:nth-child(5) {
+        width: 60%;
+        &:before {
+            width: calc(100% + 20px);
+        }
+        &:after {
+            width: calc(100% + 20px);
+        }
+    }
+    &__title {
+        font-size: 23px;
+        font-weight: 900;
+    }
+    @include breakpoint(800px) {
+        .litem__title {
+            font-size: 19px;
+        }
+    }
+    @include breakpoint(600px) {
+        width: 60%;
+        height: 100px;
+    }
+    @include breakpoint(500px) {
+        width: 70%;
+    }
+    @include breakpoint(400px) {
+        width: 80%;
+    }
+}
+
+.zzz {
+    z-index: 100000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.navbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 10000000;
+    &__button {
+        border: none;
+        background: transparent;
+        padding: 0;
+        div {
+            margin: 0;
+        }
+        span {
+            text-align: start;
+        }
+    }
+    &__item {;
+        border: none;
+        display: block;
+        background-color: #fff;
+        width: 170px;
+        height: 40px;
+        border-radius: 20px;
+        line-height: 40px;
+        background-color: #090909;
+        position: relative;
+        text-decoration: none;
+        font-size: 16px;
+        span {
+            color: #fff;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            padding-left: 15px;
+            position: relative;
+            z-index: 10000;
+            font-weight: 600;
+            transition: $dt;
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                border-radius: 30px 0 0 30px;
+                background-color: $extra;
+                top: 0;
+                right: 20px;
+                width: 0;
+                transition: $dt;
+                z-index: -1;
+            }
+        }
+        i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 100%;
+            border-radius: 30px;
+            background-color: $extra;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 18px;
+            z-index: 10000000000;
+        }
+        &:hover {
+            span {
+                &:before {
+                    width: calc(100% - 20px);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+#c {
+    width: 100%;
+    height: 100vh;
+}
+
+
+.btn {
+    border: 1px solid $extra;
+    background: rgba($extra, .3);
+    height: 30px;
+    padding: 0 15px;
+    font-weight: bold;
+    transition: $dt;
+    line-height: 29px;
+    text-decoration: none;
+    color: $text;
+    &:hover {
+        background: rgba($extra, .8);
+        color: $main;
+    }
+    @include breakpoint($bp2) {
+        padding: 0 10px;
+        font-size: 18px;
+    }
+}
+
+.about {
+    position: relative;
+    padding: 100px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: $main;
+    // .about__title
+    &__title {
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 70px;
+        font-weight: 900;
+        text-align: center;
+        white-space: nowrap;
+        text-shadow: 0 0 5px rgba(white, .5);
+        @include breakpoint($bp1) {
+            font-size: 60px;
+        }
+        @include breakpoint($bp2) {
+            font-size: 50px;
+        }
+        @include breakpoint($bp3) {
+            font-size: 40px;
+        }
+        @include breakpoint($bp4) {
+            font-size: 30px;
+        }
+    }
+    // .about__list
+    &__list {}
+}
+.about-list {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    z-index: 100;
+    // .about-list__item
+    &__item {}
+}
+.ali {
+    padding: 100px 10px 50px 10px;
+    width: 20%;
+    border-radius: 10px;
+    border-image-slice: 1;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(black, .5);
+    transition: $st;
+    z-index: 100;
+    &:hover {
+    }
+    // .ali__title
+    &__title {
+        font-size: 20px;
+        font-weight: 800;
+        transition: $st;
+    }
+    // .ali__text
+    &__text {
+        margin-top: 10px;
+        font-size: 15px;
+        letter-spacing: 1px;
+        line-height: 20px;
+        line-height: 25px;
+        font-weight: 600;
+        color: rgba($text, .8);
+        transition: $st;
+    }
+    &:hover {
+        .ali__text, .ali__title {
+            color: white;
+        }
+    }
+    &:nth-child(1) {
+        background: linear-gradient(to right bottom, #DC3F87 20%, #3F68F3);
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+    &:nth-child(2) {
+        background: linear-gradient(to right bottom, #DC3F87 20%, rgba(#DC3F87, .35));
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+    &:nth-child(3) {
+        background: linear-gradient(to right bottom, #3F68F3 20%, rgba(#3F68F3, .35));
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+    &:nth-child(4) {
+        background: linear-gradient(to left bottom, #DC3F87 20%, #3F68F3);
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+    @include breakpoint($bp1) {
+        &__title {
+            font-size: 20px;
+        }
+        &__text {
+            font-size: 13px;
+        }
+    }
+    @include breakpoint($bp2) {
+        width: 30%;
+    }
+    @include breakpoint($bp3) {
+        width: 49%;
+        &__title {
+            font-size: 17px;
+        }
+        &__text {
+            font-size: 14px;
+        }
+    }
+    @include breakpoint($bp4) {
+        width: 80%;
+    }
+}
+
+.line {
+    margin-top: 65px;
+    width: 100%;
+    height: 250px;
+    padding-bottom: 75px;
+    background: $text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    border-top: 1px solid $text;
+    border-bottom: 1px solid $text;
+    box-shadow: 0px 0px 15px $text;
+    position: relative;
+    &__title {
+        @extend .about__title;
+        color: $light;
+        top: 20px;
+        white-space: nowrap;
+    }
+    ul {
+        padding-top: 130px;
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+        li {
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: $light;
+            font-weight: 700;
+            font-size: 30px;
+            transition: $dt;
+            position: relative;
+            text-align: center;
+            &:hover {
+                color: $red;
+            }
+            &:before {
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                content: "";
+                height: 5px;
+                width: 0;
+                background-color: $light;
+                transition: $dt;
+            }
+            &:hover:before {
+                width: 100%;
+                background-color: $red;
+            }
+        }
+        @include breakpoint($bp3) {
+            flex-direction: column;
+            gap: 30px;
+            a {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+.stats {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: $main;
+    &__title {
+        @extend .about__title;
+    }
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.sitem {
+    padding: 20px;
+    margin-bottom: 50px;
+    width: 43%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    transition: $dt;
+    box-shadow: 0 0 10px rgba(black, .4);
+    background-color: #fff;
+    div {
+        width: 50%;
+    }
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 100px;
+        }
+    }
+    &__title {
+        position: absolute;
+        font-weight: 800;
+        margin-bottom: 5px;
+        transition: $dt;
+        z-index: 100;
+        font-size: 25px;
+    }
+    &__text {
+        position: relative;
+        font-size: 15px;
+        transition: $ft;
+        padding: 0 10px 0 0;
+    }
+    .bg  {
+        height: 100%;
+        width: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: $dt;
+        z-index: 0;
+    }
+    &:nth-child(1) {
+        .bg {
+            background: $red;
+        }
+        .sitem__title {
+            color: $red;
+        }
+    }
+    &:nth-child(2) {
+        .bg {
+            background: $blue;
+        }
+        .sitem__title {
+            color: $blue;
+        }
+    }
+    &:nth-child(3) {
+        .bg {
+            background: $green;
+        }
+        .sitem__title {
+            color: $green;
+        }
+    }
+    &:nth-child(4) {
+        .bg {
+            background: $indigo;
+        }
+        .sitem__title {
+            color: $indigo;
+        }
+    }
+    &:nth-child(1), &:nth-child(3) {
+        .sitem__title {
+            top: 10px;
+            right: 30px;
+        }
+        transform: skew(-45deg);
+        .sitem__img, .sitem__title, .sitem__text {
+            transform: skew(45deg);
+        }
+        @include breakpoint(600px) {
+            transform: none;
+
+            .sitem__img, .sitem__title, .sitem__text {
+                transform: none;
+            }
+        }
+    }
+    &:nth-child(2), &:nth-child(4) {
+        .sitem__title {
+            top: 10px;
+            left: 30px;
+        }
+        transform: skew(45deg);
+        .sitem__img, .sitem__title, .sitem__text {
+            transform: skew(-45deg);
+        }
+        @include breakpoint(600px) {
+            transform: none;
+
+            .sitem__img, .sitem__title, .sitem__text {
+                transform: none;
+            }
+        }
+    }
+    &:hover {
+        color: $light;
+        .sitem__title {
+            color: $light;
+        }
+        .bg {
+            width: 100%;
+        }
+    }
+    @include breakpoint(1340px) {
+        margin-bottom: 20px;
+        width: 80%;
+        margin-left: 10%;
+    }
+    @include breakpoint($bp3) {
+        width: 70%;
+        margin-left: 15%;
+    }
+    @include breakpoint(600px) {
+        width: 90%;
+        margin-left: 5%;
+        img {
+            width: 50px;
+        }
+    }
+}
+
+
+.info {
+    position: relative;
+    width: 100%;
+    padding: 150px 0;
+    background: $light;
+    box-shadow: 0 0 10px rgba(black, .35);
+    // .info__title
+    &__title {
+        @extend .about__title;
+        top: 20px;
+    }
+    // .info__container
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint($bp3) {
+            flex-wrap: wrap;
+        }
+    }
+}
+.iitem {
+    padding: 20px 5px;
+    width: 100%;
+    text-align: center;
+    // .iitem__img
+    &__img {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 100px;
+        }
+        @include breakpoint($bp2) {
+            padding: 10px;
+            img {
+                width: 80px;
+            }
+        }
+    }
+    // .iitem__title
+    &__title {
+        font-size: 25px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        @include breakpoint($bp2) {
+            font-size: 20px;
+        }
+    }
+    // .iitem__text
+    &__text {
+        font-weight: bold;
+        color: rgba(black, .5);
+        margin-bottom: 30px;
+        @include breakpoint($bp2) {
+            font-size: 15px;
+        }
+    }
+    // .iitem__link
+    &__link {
+        font-size: 22px;
+        text-decoration: none;
+        font-weight: 600;
+        position: relative;
+        transition: $dt;
+        letter-spacing: 1px;
+        &:before {
+            content: "";
+            width: 85%;
+            height: 3px;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: $dt;
+        }
+        &:hover {
+            letter-spacing: 0;
+            color: $text !important;
+        }
+        &:hover:before {
+            width: 0;
+        }
+        @include breakpoint($bp2) {
+            font-size: 17px;
+            letter-spacing: 0;
+        }
+    }
+    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+        border-right: 1px solid rgba(black, .4);
+        @include breakpoint($bp4) {
+            border: none;
+            border-bottom: 1px solid $text;
+        }
+    }
+    &:nth-child(1) {
+        .iitem__title {
+            color: $red;
+        }
+        .iitem__link {
+            color: $red;
+            &:before {
+                background-color: $red;
+            }
+        }
+    }
+    &:nth-child(2) {
+        .iitem__title {
+            color: $blue;
+        }
+        .iitem__link {
+            color: $blue;
+            &:before {
+                background-color: $blue;
+            }
+        }
+        @include breakpoint($bp3) {
+            border: none;
+        }
+    }
+    &:nth-child(3) {
+        .iitem__title {
+            color: $green;
+        }
+        .iitem__link {
+            color: $green;
+            &:before {
+                background-color: $green;
+            }
+        }
+    }
+    &:nth-child(4) {
+        .iitem__title {
+            color: $indigo;
+        }
+        .iitem__link {
+            color: $indigo;
+            &:before {
+                background-color: $indigo;
+            }
+        }
+    }
+    @include breakpoint($bp3) {
+        width: 50%;
+    }
+    @include breakpoint($bp4) {
+        padding-bottom: 35px;
+        width: 100%;
+    }
+}
+
+.questions {
+    position: relative;
+    padding: 200px 0;
+    width: 100%;
+    // .questions__title
+    &__title {
+        @extend .about__title;
+    }
+    // .questions__container
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    // .questions__left
+    &__left {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 80%;
+        }
+    }
+    // .questions__right
+    &__right {
+        width: 50%;
+    }
+    // .questions__list
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    @include breakpoint($bp3) {
+        .questions__left {
+            display: none;
+        }
+        .questions__right {
+            width: 100%;
+        }
+    }
+}
+.qitem {
+    margin-bottom: 30px;
+    position: relative;
+    transition: $dt;
+    .arrow {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        transform: rotate(90deg);
+        cursor: pointer;
+        transition: $dt;
+        z-index: 1000;
+    }
+    // .qitem__que
+    &__que {
+        padding: 30px 20px;
+        box-shadow: 0 0 25px rgba(black, .4);
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: $dt;
+        font-weight: 700;
+        position: relative;
+    }
+    // .qitem__ans
+    &__ans {
+        padding: 0 20px;
+        opacity: 0;
+        font-size: 17px;
+        font-weight: 500;
+        transition: $dt;
+        margin-top: -70px;
+        z-index: -1;
+        cursor: pointer;
+    }
+    img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        width: 50px;
+    }
+}
+
+.active-q {
+    .qitem__que {
+        background-color: $red;
+    }
+    .qitem__ans {
+        opacity: 1;
+        margin-top: 0;
+    }
+    .arrow {
+        transform: rotate(270deg);
+    }
+}
+
+.lesson {
+    position: relative;
+    padding-top: 150px;
+    margin-bottom: 100px;
+    // .lesson__title
+    &__title {
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+        font-size: 40px;
+        font-weight: 900;
+
+    }
+    // .lesson__container
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include breakpoint($bp1) {
+            margin-top: 0;
+        }
+    }
+    // .lesson__list
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        li {
+            width: 100%;
+        }
+        @include breakpoint(600px) {
+            justify-content: center;
+        }
+    }
+    // .lesson__link
+    &__link {
+        padding: 20px 10px;
+        display: block;
+        width: 49%;
+        background-color: rgba($main, .9);
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(black, .7);
+        text-align: center;
+        text-decoration: none;
+        color: $text;
+        transition: $dt;
+        font-weight: 600;
+        position: relative;
+        margin-bottom: 30px;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 15px;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 0;
+            background-color: $text;
+            transition: $st;
+            max-width: 100px;
+        }
+        &:hover {
+            background-color: $extra;
+            color: $light;
+        }
+        &:hover:before {
+            width: 80%;
+            background-color: $light;
+        }
+        @include breakpoint($bp3) {
+            width: 48%;
+        }
+        @include breakpoint(600px) {
+            width: 80%;
+        }
+    }
+    // .lesson__text
+    &__text {
+        font-size: 18px;
+        color: $text;
+        font-weight: 500;
+        margin-bottom: 20px;
+        &:nth-child(1) {
+            @include breakpoint($bp3) {
+                flex-wrap: wrap;
+            }
+        }
+        @include breakpoint($bp3) {
+            font-size: 15px !important;
+            margin-bottom: 10px;
+        }
+        @include breakpoint($bp4) {
+            font-size: 13px !important;
+            margin-bottom: 10px;
+        }
+    }
+    // .lesson__area
+    &__area {
+        font-size: 16px;
+        width: 100%;
+        margin-bottom: 20px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 10px;
+        box-shadow: 0 0 10px rgba(black, .8);
+        font-weight: 600;
+        background-color: rgba($gray, .3);
+        border: 1px solid $gray;
+        color: $text;
+        border-radius: 5px;
+    }
+    // .lesson__input
+    &__input {
+        @extend .lesson__area;
+        &::placeholder {
+            color: rgba($text, .8);
+        }
+    }
+    // .lesson__text
+    &__text {}
+    &__start {
+        @extend .lesson__area;
+        background: rgba($extra, .3);
+        border: 1px solid $extra;
+        font-weight: 800 !important;
+        transition: $dt;
+        &:hover {
+            background-color: rgba($extra, .8);
+            color: $light;
+        }
+    }
+    &__task {
+        padding: 0 0 20px 0;
+        margin-bottom: 20px;
+        span, h1 {
+            word-break: break-word;
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+            li {
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 0 20px;
+                gap: 3px;
+                position: relative;
+                input[type="checkbox"]:not(:checked) {
+                    border: 1px solid $blue;
+                }
+            }
+        }
+        &:nth-child(-1) {
+            margin-bottom: 50px;
+        }
+    }
+    img {
+        margin-top: 20px;
+        display: block;
+        width: 100% !important;
+    }
+    &__task {
+        padding: 10px;
+        h1 {
+            padding: 10px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        img {
+            width: 20% !important;
+            max-width: 200px;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                padding: 10px 0;
+            }
+        }
+    }
+}
+
+.lesson-single {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding: 70px 20px !important;
+    background-color: rgba($main, .85);
+    box-shadow: 0 0 10px rgba(black, .4);
+    .lesson__title {
+        position: static;
+        white-space: normal;
+        text-align: center;
+        width: 100%;
+        font-size: 40px;
+        font-weight: 800;
+        margin-top: -50px;
+        margin-bottom: 20px;
+        transform: none;
+    }
+    .lesson__line {
+        line-height: 20px;
+        font-size: 16px;
+    }
+}
+
+.lesson-table {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    background-color: #000;
+    &__ans {
+        display: block;
+        font-weight: 900;
+        width: 100%;
+        border: 1px solid $extra;
+        height: 40px;
+        line-height: 40px;
+        @include breakpoint($bp3) {
+            width: 20%;
+        }
+    }
+    .correct {
+        color: $green;
+    }
+    .wrong {
+        color: $red;
+    }
+    @include breakpoint($bp3) {
+        flex-wrap: wrap;
+    }
+}
+
+.profile {
+    padding: 20px 20px 100px 20px;
+    margin-top: -120px !important;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: rgba($light, .85);
+    box-shadow: 0 0 10px rgba(black, .4);
+    min-height: 100vh;
+    position: relative;
+    z-index: 100 !important;
+    // .profile__title
+    &__title {
+        font-size: 70px;
+        font-weight: 900;
+        white-space: nowrap;
+        text-shadow: 0 0 5px rgba(white, .5);
+        margin-bottom: 40px;
+        padding-left: 10px;
+        @include breakpoint($bp1) {
+            font-size: 60px;
+        }
+        @include breakpoint($bp2) {
+            font-size: 50px;
+        }
+        @include breakpoint($bp3) {
+            font-size: 40px;
+        }
+        @include breakpoint($bp4) {
+            font-size: 30px;
+        }
+    }
+    // .profile__text
+    &__text {
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        span {
+            font-weight: 700;
+            text-decoration: underline;
+            color: rgba($red, .6);
+        }
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+        @extend .lesson__area;
+    }
+    input[type="checkbox"] {
+        margin-bottom: 20px;
+    }
+    &__r-links {
+        display: flex;
+        justify-content: space-between;
+        a {
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+    &__btn {
+        @extend .lesson__start;
+    }
+    input {
+        margin-top: 10px;
+    }
+}
+
+
+.login {
+    margin-top: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.timer, .total_answers, .total_points {
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 5px;
+    span {
+        color: rgba($extra, .7)
+    }
+}
+.timer {
+    margin-top: 10px;
+}
+
+.error {
+    @extend .lesson__area;
+    background-color: rgba($red, .3);
+    border: 1px solid $red;
+    box-shadow: none;
+}
+
+.success {
+    @extend .lesson__area;
+    background-color: rgba($green, .3);
+    border: 1px solid $green;
+    box-shadow: none;
+}
+
+.bg-img {
+    width: 100px;
+    z-index: 0;
+}
+
+.no-shadow {
+    box-shadow: none;
+    &:hover {
+        box-shadow: none;
+    }
+}
+
+table {
+    background-color: $light;
+    box-shadow: 0 0 10px rgba(black, .5);
+    max-width: $container;
+    margin: 50px auto;
+    thead {
+        td {
+            font-weight: 700;
+            background-color: rgba($red, .6);
+            color: $white;
+        }
+        tr {
+            &:hover {
+                background-color: inherit !important;
+            }
+        }
+    }
+
+    tr {
+        border-bottom: 1px solid $gray-dark;
+    }
+
+    td {
+        padding: 10px;
+        word-break: break-word;
+        min-width: 100px;
+        font-size: 16px;
+        text-align: center;
+        position: relative;
+        background: $main;
+        border: 1px solid rgba($second, .6);
+        &:nth-child(1) {
+            border-radius: 5px 0 0 0;
+        }
+        @include breakpoint($bp3) {
+            min-width: 0;
+        }
+        img {
+            width: 100px;
+        }
+    }
+    @include breakpoint($bp1) {
+        td {
+            padding: 5px;
+        }
+    }
+    @include breakpoint($bp3) {
+        td {
+            font-size: 13px;
+        }
+
+    }
+    @include breakpoint($bp4) {
+        td {
+            font-size: 10px;
+        }
+        width: 100% !important;
+    }
+}
+
+.admin {
+    td{
+        &:nth-child(3n+1) {
+            width: 10%;
+        }
+    }
+}
+
+.profile__table {
+    width: 100% !important;
+    margin-bottom: 100px;
+    &:nth-child(5n+1), &:nth-child(5n+2) {
+        width: 10%;
+    }
+}
+
+i {
+    transition: $dt;
+    text-decoration: none;
+    color: $text;
+    font-size: 15px;
+
+    &:hover {
+        color: $main;
+    }
+}
